@@ -10,6 +10,10 @@
         android:title="Record"
         app:showAsAction="never" />
     <item
+        android:id="@+id/menu_screen_record"
+        android:title="Screen record"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/menu_focus"
         android:title="Camera Focus"
         app:showAsAction="never" />
