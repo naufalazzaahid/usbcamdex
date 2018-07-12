@@ -1,5 +1,6 @@
 package com.app.sample.externalcameratest;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.hardware.usb.UsbDevice;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.view.Surface;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.Switch;
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements
     boolean currentDesktopMode = false;
 
     public View mTextureView;
+    private Button buttonPause;
     public android.support.v7.widget.Toolbar mToolbar;
 
     public SeekBar mSeekBrightness;
@@ -124,6 +127,7 @@ public class MainActivity extends AppCompatActivity implements
         mSeekBrightness = findViewById(R.id.seekbar_brightness);
         mSeekContrast = findViewById(R.id.seekbar_contrast);
         mSwitchVoice = findViewById(R.id.switch_rec_voice);
+        buttonPause = findViewById(R.id.button_pause);
         initView();
 
         desktopModeEnabled = checkDeXEnabled();
@@ -307,6 +311,13 @@ public class MainActivity extends AppCompatActivity implements
                 }
                 showResolutionListDialog();
                 break;
+
+            case R.id.menu_screen_record:
+                Intent intent = new Intent(this, ScreenRecordingActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+
+                startActivity(intent);
+                break;
             case R.id.menu_focus:
                 if (mCameraHelper == null || !mCameraHelper.isCameraOpened()) {
                     warnMessage("sorry,camera open failed");
@@ -317,6 +328,7 @@ public class MainActivity extends AppCompatActivity implements
         }
         return super.onOptionsItemSelected(item);
     }
+
 
     private void showResolutionListDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
