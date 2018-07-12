@@ -33,7 +33,7 @@ import java.io.IOException;
 public class ScreenRecorderService extends Service {
     private static final boolean DEBUG = true;
     private static final String TAG = "GEEKSHARE";
-    private static final String APP_DIR_NAME = "ScreenRecorder";
+    private static final String APP_DIR_NAME = "GeekRecorder";
     static {
         FileUtils.DIR_NAME = APP_DIR_NAME;
     }

@@ -80,8 +80,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ScreenRecordingActivity" android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".ScreenRecordingActivity"
+            android:theme="@style/AppTheme" />
 
+        <service
+            android:name=".service.ScreenRecorderService"
+            android:enabled="true"
+            android:exported="false" >
+        </service>
 
     </application>
 
