@@ -12,7 +12,7 @@ import java.nio.ByteBuffer;
 
 public abstract class MediaEncoder implements Runnable {
     private static final boolean DEBUG = false;	// TODO set false on release
-    private static final String TAG = com.serenegiant.media.MediaEncoder.class.getSimpleName();
+    private static final String TAG = "giksyiitt";
 
     protected static final int TIMEOUT_USEC = 10000;	// 10[msec]
     protected static final int MSG_FRAME_AVAILABLE = 1;

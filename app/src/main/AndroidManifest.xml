@@ -81,6 +81,7 @@
         </activity>
 
         <activity
+            android:resizeableActivity="true"
             android:name=".ScreenRecordingActivity"
             android:theme="@style/AppTheme" />
 
